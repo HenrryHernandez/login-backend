@@ -28,8 +28,9 @@ router.get("/refresh-token", (req, res, next) => {
   const refreshToken = req.cookies.refreshToken;
 
   // console.log("refreshToken = ", refreshToken);
+  const accessToken = signAccessToken();
 
-  return res.status(200).json({ accessToken: "access_token" });
+  return res.status(200).json({ accessToken });
 });
 
 module.exports = router;
